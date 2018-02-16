@@ -19,7 +19,7 @@ chmod 777 /data/data/jackpal.androidterm/app_HOME/php
 最新版のPocketMine-MPもダウンロードし、`[storage]/PocketMine/`か任意のフォルダに展開しましょう。<br />
 https://github.com/pmmp/PocketMine-MP/archive/master.zip
 
-## Composerのインストール
+## Composerのダウンロード
 composer.phar<br />
 https://getcomposer.org/composer.phar<br />
 
