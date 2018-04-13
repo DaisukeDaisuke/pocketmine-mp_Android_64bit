@@ -1,37 +1,71 @@
-  # pocketmine-mp Android 64bit
+# pocketmine-mp Android 64bit
 phpバイナリです。<br />
 Androidでお使いになる場合は、ターミナルエミュレータが必要です。<br />
 
 ## install
 
-`7.2.2-Android-AArch64-x64_compile-GD.zip`をダウンロードし、解凍します。<br />
+`7.2.4-Android-AArch64-x64.zip`をダウンロードし、解凍します。<br />
+今回は`/sdcard/Download/`直下に展開したとします。<br/><br />
+
 以下のアプリケーションをインストールします。<br />
 https://play.google.com/store/apps/details?id=jackpal.androidterm <br />
 アプリを起動し、以下のコマンドを入力します。<br />
-なお[download]などは適切なも物に変えましょう。<br />
 ```
-cp [download]/php /data/data/jackpal.androidterm/app_HOME/php
+cp /sdcard/Download/php /data/data/jackpal.androidterm/app_HOME/php
 chmod 777 /data/data/jackpal.androidterm/app_HOME/php
 ```
 
 ## pmmp/Pocketmine-MPのダウンロード
 
-最新版のPocketMine-MPもダウンロードし、`[storage]/PocketMine/`か任意のフォルダに展開しましょう。<br />
-https://github.com/pmmp/PocketMine-MP/archive/master.zip
+最新版のPocketMine-MPもダウンロードし、`/sdcard/PocketMine/`か任意のフォルダに展開しましょう。<br />
+https://jenkins.pmmp.io/job/PocketMine-MP/lastSuccessfulBuild/artifact/PocketMine-MP.phar <br />
 
-## Composerのダウンロード
-composer.phar<br />
-https://getcomposer.org/composer.phar<br />
+インストール時にソースのPocketMine-MPも必要なのでダウンロードし、`/sdcard/PocketMine/`か任意のフォルダに展開しましょう。<br />
+https://github.com/pmmp/PocketMine-MP/archive/master.zip <br />
 
-## start
+### 現在の様子
 ```
-cd [storage]/PocketMine/
-env TMPDIR='[storage]/PocketMine/tmp' /data/data/jackpal.androidterm/app_HOME/php [storage]/PocketMine/PocketMine-MP.phar
+/sdcard/PocketMine $ ls
+CONTRIBUTING.md
+LICENSE
+PocketMine-MP.phar
+README.md
+composer.json
+composer.lock
+doxygen.conf
+src
+start.cmd
+start.ps1
+start.sh
+tests
 ```
-### php.iniを設定したい場合
-`7.2.2-Android-AArch64-x64_compile-GD.zip`の中に`php.ini`が入っていますので、<br />
-それを任意のフォルダにコピーして使いましょう。<br />
+
+## 実行に必要な設定ファイルをコピー
 ```
-cd [storage]/PocketMine/
-env TMPDIR='[storage]/PocketMine/tmp' /data/data/jackpal.androidterm/app_HOME/php  -c  [storage]/PocketMine/php.ini [storage]/PocketMine/PocketMine-MP.phar
+cp /sdcard/Download/resolv.conf /sdcard/PocketMine/resolv.conf
+cp /sdcard/Download/php.ini /sdcard/PocketMine/php.ini
+```
+
+## Composerのインストール
+以下のインストーラをダウンロードし、以下のコマンドを実行しましょう。<br />
+https://getcomposer.org/installer
+
+```
+cp /sdcard/Download/installer /sdcard/PocketMine/installer
+
+cd /sdcard/PocketMine/
+mkdir bin
+env TMPDIR='/sdcard/PocketMine/tmp' LESMI_RESOLV_CONF_DIR='/sdcard/PocketMine/resolv.conf' /data/data/jackpal.androidterm/app_HOME/php -c /sdcard/PocketMine/php.ini installer --install-dir=bin
+```
+
+## 前提のプログラムをComposerでダウンロード
+```
+cd /sdcard/PocketMine/
+env TMPDIR='/sdcard/PocketMine/tmp' LESMI_RESOLV_CONF_DIR='/sdcard/PocketMine/resolv.conf' /data/data/jackpal.androidterm/app_HOME/php /sdcard/PocketMine/bin/Composer.phar install
+```
+
+## 起動
+```
+cd /sdcard/PocketMine
+env TMPDIR='/storage/PocketMine/tmp' LESMI_RESOLV_CONF_DIR=/sdcard/PocketMine/resolv.conf /data/data/jackpal.androidterm/app_HOME/php -c /sdcard/PocketMine/php.ini /sdcard/PocketMine/PocketMine-MP.phar
 ```
