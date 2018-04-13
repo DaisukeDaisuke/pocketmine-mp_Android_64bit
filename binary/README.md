@@ -5,8 +5,6 @@ Androidでお使いになる場合は、ターミナルエミュレータが必�
 ## install
 
 `7.2.4-Android-AArch64-x64.zip`をダウンロードし、解凍します。<br />
-今回は`/sdcard/Download/`直下に展開したとします。<br/><br />
-
 以下のアプリケーションをインストールします。<br />
 https://play.google.com/store/apps/details?id=jackpal.androidterm <br />
 アプリを起動し、以下のコマンドを入力します。<br />
