@@ -4,9 +4,13 @@ Androidでお使いになる場合は、ターミナルエミュレータが必�
 
 #### 動作条件
 64bitであること<br />
-## install
 
-`7.2.4-Android-AArch64-x64.zip`をダウンロードし、解凍します。<br />
+## バイナリをビルドする際に使用したリポジトリ
+https://gitlab.com/2ndLesmi/MuslCrossMake <br />
+https://gitlab.com/2ndLesmi/AndroidPhp <br />
+
+## install
+[7.2.4-Android-AArch64-x64.zip](https://github.com/DaisukeDaisuke/pocketmine-mp_Android_64bit/blob/master/binary/7.2.4-Android-AArch64-x64.zip?raw=true)  をダウンロードし、解凍します。<br />
 以下のアプリケーションをインストールします。<br />
 https://play.google.com/store/apps/details?id=jackpal.androidterm <br />
 アプリを起動し、以下のコマンドを入力します。<br />
