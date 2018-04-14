@@ -77,3 +77,10 @@ env TMPDIR='/sdcard/PocketMine/tmp' LESMI_RESOLV_CONF_DIR='/sdcard/PocketMine/re
 cd /sdcard/PocketMine
 env TMPDIR='/storage/PocketMine/tmp' LESMI_RESOLV_CONF_DIR=/sdcard/PocketMine/resolv.conf /data/data/jackpal.androidterm/app_HOME/php -c /sdcard/PocketMine/php.ini /sdcard/PocketMine/PocketMine-MP.phar
 ```
+#### 初期起動時のセットアップウィザード
+初期起動時は以下を入力します。
+```
+eng
+y
+y
+```
