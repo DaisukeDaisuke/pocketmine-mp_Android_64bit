@@ -4,7 +4,11 @@ Androidでお使いになる場合は、ターミナルエミュレータが必�
 
 #### 動作条件
 64bitであること<br />
-
+#### 32bitの場合
+32bitの場合は実行時にこのように出ます。(非対応)
+```
+/system/bin/sh: /data/data/jackpal.androidterm/app_HOME/php: not executable: magic 7F45
+```
 ## バイナリをビルドする際に使用したリポジトリ
 https://gitlab.com/2ndLesmi/MuslCrossMake <br />
 https://gitlab.com/2ndLesmi/AndroidPhp <br />
