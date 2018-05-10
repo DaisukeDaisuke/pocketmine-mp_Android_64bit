@@ -80,7 +80,7 @@ env TMPDIR='/storage/PocketMine/tmp' LESMI_RESOLV_CONF_DIR=/sdcard/PocketMine/re
 #### 初期起動時のセットアップウィザード
 初期起動時は以下を入力します。
 ```
-eng
+jpn
 y
 y
 ```
